@@ -161,25 +161,30 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;just
 @media(max-width:760px){.interest-grid{grid-template-columns:1fr}.subpage{padding-top:32px}}
 
 
-/* Beyond Academics - Smoke Dissolving Word Cloud */
+/* Beyond Academics - Compact Smoke Cloud */
+#beyond-academics h2 {
+  font-size: 1.65rem;
+  margin: 0 0 4px;
+}
+
 .smoke-cloud {
-    position: relative;
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
-    margin: 0 auto;
+  position: relative;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  margin: 0 auto;
 }
 
 .smoke-cloud canvas {
-    display: block;
-    width: 100%;
-    height: 100%;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 @media (max-width: 600px) {
-    .smoke-cloud {
-        height: 190px;
-    }
+  .smoke-cloud {
+    height: 145px;
+  }
 }
 </style>
 </head>
@@ -292,7 +297,7 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;just
     </div>
   </section>
 
-  <hr style="border:none; border-top:1px solid var(--line); margin:32px 0;">
+  <hr style="border:none; border-top:1px solid var(--line); margin:16px 0 10px;">
 
   <section class="section" id="beyond-academics">
     <h2>Beyond Academics</h2>
@@ -302,22 +307,30 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;just
     </div>
   </section>
 
-  <hr style="border:none; border-top:1px solid var(--line); margin:32px 0;">
+  <hr style="border:none; border-top:1px solid var(--line); margin:16px 0 10px;">
 
-      <div>
-        <h3>Let's connect!</h3>
-      </div>
-      <a class="contact-btn" href="mailto:lisaliu22@berkeley.edu">Get in Touch ↗</a>
+   <div class="contact-strip">
+    <div>
+      <h3>Let's connect!</h3>
     </div>
-  </main>
+    <a class="contact-btn" href="mailto:lisaliu22@berkeley.edu">
+      Get in Touch ↗
+    </a>
+  </div>
+</main>
 
-  <footer>
-    <span>© 2026 Lisa Liu</span>
-    <span>UC Berkeley</span>
-  </footer>
+<footer>
+  <span>© 2026 Lisa Liu</span>
+  <span>UC Berkeley</span>
+</footer>
 </div>
 
+
 <script>
+  // ==========================================================================================================
+  // These below are not developed by the website owner. But these are directly modified by the website owner.
+  // ==========================================================================================================
+  
   if (localStorage.getItem('theme') === 'light') {
     document.documentElement.setAttribute('data-theme', 'light');
   }
