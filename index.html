@@ -144,7 +144,7 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;just
 .section-heading{margin-bottom:24px}
 .section-kicker{color:var(--blue);font-size:.72rem;font-weight:700;letter-spacing:.12em}
 .section-heading h2{font-size:1.65rem;letter-spacing:-.025em;margin:8px 0 8px}
-.section-heading p{color:var(--muted);margin:0;max-width:720px;line-height:1.7}
+.section-heading p{color:var(--ink);margin:0;max-width:720px;line-height:1.7}
 .interest-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .interest-card{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:21px 22px}
 .interest-card h3{font-size:1rem;margin:0 0 10px;font-weight:650}
@@ -163,23 +163,16 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;just
 
 
   /* Beyond Academics - Interest Cloud */
-.interest-cloud {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 18px 25px;
-    padding: 35px 15px;
+.interest-cloud span:nth-child(2) {
+    transform: rotate(-8deg);
 }
 
-.interest-cloud span {
-    color: inherit;
-    line-height: 1.3;
-    transition: transform 0.2s ease;
+.interest-cloud span:nth-child(4) {
+    transform: rotate(6deg);
 }
 
-.interest-cloud span:hover {
-    transform: scale(1.1);
+.interest-cloud span:nth-child(6) {
+    transform: rotate(-5deg);
 }
   
 </style>
