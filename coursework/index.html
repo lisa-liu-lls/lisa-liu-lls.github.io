@@ -155,8 +155,65 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;just
 .page-card ul{color:var(--muted);padding-left:20px;line-height:1.8}
 .page-card ul li{margin-bottom:5px}
 @media(max-width:760px){.interest-grid{grid-template-columns:1fr}.subpage{padding-top:32px}}
+  
+.coursework {
+  max-width: 850px;
+  margin: 48px auto;
+}
+
+.coursework-intro {
+  color: var(--muted);
+  margin-bottom: 36px;
+}
+
+.semester {
+  margin-bottom: 36px;
+}
+
+.semester-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.semester-heading h2 {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.semester-heading > span {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.course {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 4px;
+}
+
+.course-category {
+  color: var(--muted);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .course {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
 
 </style></head>
+  
 <body><div class="container">
   <nav class="nav">
     <a class="brand" href="../index.html">Lisa Liu</a>
@@ -165,14 +222,149 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;just
       <a class="nav-btn" href="../research/">Research</a>
       <a class="nav-btn" href="../experience/">Work Experience</a>
       <a class="nav-btn" href="../teaching/">Teaching</a>
-      <a class="nav-btn active" href="../coursework/" aria-current="page">Coursework</a>
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme"><span id="toggle-icon">☀️</span><span id="toggle-text">Light Mode</span></button>
+  
+<section class="coursework">
+  <h1>Coursework</h1>
+  
+   <div class="semester">
+    <div class="semester-heading">
+      <h2>Spring 2027 (Tentative)</h2>
     </div>
-  </nav>
-<main class="subpage"><div class="page-eyebrow">Lisa Liu · UC Berkeley</div><h1>Coursework</h1><p class="page-lead">
-<article class="page-card"><h2></h2>Data Science<div class="meta">Machine Learning & Data Analysis</div><p>Course Number: Data C100</p></article>
-  <article class="page-card"><h2>Math Background</h2><div class="meta">Linear Algebra & Multivariable Calculus</div><p>Course Number: Math 54, Math 53</p></article>
-<article class="page-card"><h2>Neuroscience</h2><div class="meta">Molecular and Cellular Neuroscience & Circuits</div><p>Course Number: NEU 100A, NEU 100B, NEU 151, BioE C171, NEU 152, NEU 172L, NEU 110</p></article></main>
+
+    <div class="course">
+      <span>DATA C140: Probability for Data Science</span>
+      <span class="course-category">Data Science</span>
+    </div>
+
+    <div class="course">
+      <span>BIOENG C171: Interface Between Neuroethology & Neural Engineering</span>
+      <span class="course-category">Bioengineering</span>
+    </div>
+  </div>
+
+  <div class="course">
+      <span>NEU 100B: Circuit, Systems and Behavioral Neuroscience</span>
+      <span class="course-category">Neuroscience</span>
+    </div>
+  </div>
+
+  <div class="course">
+      <span>CompSci 61B: Data Structures</span>
+      <span class="course-category">Computer Science</span>
+    </div>
+  </div>
+
+  <div class="semester">
+    <div class="semester-heading">
+      <h2>Fall 2026</h2>
+    </div>
+
+    <div class="course">
+      <span>DATA C100: Principles and Techniques of Data Science</span>
+      <span class="course-category">Data Science</span>
+    </div>
+
+    <div class="course">
+      <span>NEU 100A: Cellular and Molecular Neurobiology</span>
+      <span class="course-category">Neuroscience</span>
+    </div>
+  </div>
+
+  <div class="course">
+      <span>Physics 8A: Introduction to Physics</span>
+      <span class="course-category">Physics</span>
+    </div>
+  </div>
+
+  <div class="course">
+      <span>CS 365: Introduction to Instructional Methods in Computer Science for Academic Interns</span>
+      <span class="course-category">Teaching Intern for CompSci 10</span>
+    </div>
+  </div>
+
+  <div class="semester">
+    <div class="semester-heading">
+      <h2>Summer 2026</h2>
+        <div class="course">
+          <span>Data C8: Foundations of Data Science</span>
+          <span class="course-category">Data Science</span>
+      </div>
+
+      <div class="course">
+          <span>Data C8: Foundations of Data Science</span>
+          <span class="course-category">Data Science</span>
+      </div>
+
+      <div class="course">
+          <span>ITALIAN R5B: Reading and Composition</span>
+          <span class="course-category">College Level Writing</span>
+      </div>
+
+      <div class="course">
+          <span>Digital Infrastructure 101: The Hidden Foundations of the Internet</span>
+          <span class="course-category">Digital Infrastructure</span>
+      </div>
+
+      <div class="semester">
+    <div class="semester-heading">
+      <h2>Fall 2025</h2>
+      <div class="course">
+          <span>BIOENG 10: Introduction to Biomedicine for Engineers</span>
+          <span class="course-category">Bioengineering</span>
+      </div>
+      
+      <div class="course">
+          <span>CompSci 61A: The Structure and Interpretation of Computer Programs</span>
+          <span class="course-category">Computer Science</span>
+      </div>
+
+      <div class="course">
+          <span>Math 53: Multivariable Calculus</span>
+          <span class="course-category">Mathematics</span>
+      </div>
+
+      <div class="course">
+          <span>CHINESE 110A: Introduction to Literary Chinese</span>
+          <span class="course-category">Breath Course</span>
+      </div>
+
+      <div class="course">
+          <span>BIOENG 26: Introduction to Bioengineering</span>
+          <span class="course-category">Bioengineering</span>
+      </div>
+
+      <div class="semester-heading">
+      <h2>Spring 2026</h2>
+      <div class="course">
+          <span>Math 54: Linear Algebra and Differential Equations</span>
+          <span class="course-category">Mathematics</span>
+      </div>
+      
+      <div class="course">
+          <span>Chem 3A: Chemical Structure and Reactivity</span>
+          <span class="course-category">Organic Chemistry</span>
+      </div>
+
+      <div class="course">
+          <span>COLWRT R4B: Reading and Composition</span>
+          <span class="course-category">College Level Writing</span>
+      </div>
+
+      <div class="course">
+          <span>INTEGBI 35AC: Human Biological Variation</span>
+          <span class="course-category">American Culture</span>
+      </div>
+      
+      <div class="course">
+          <span>BIOENG 25: Careers in Biotechnology</span>
+          <span class="course-category">Bioengineering</span>
+      </div>
+    </div>
+
+    <!-- Add your actual courses here -->
+  </div>
+</section>
+
 <footer><span>© 2026 Lisa Liu</span><span><a href="../index.html">← Back to Home</a></span></footer>
 </div><script>
   if (localStorage.getItem('theme') === 'light') {
