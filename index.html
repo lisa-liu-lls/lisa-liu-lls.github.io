@@ -161,6 +161,27 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;just
 .page-card ul li{margin-bottom:5px}
 @media(max-width:760px){.interest-grid{grid-template-columns:1fr}.subpage{padding-top:32px}}
 
+
+  /* Beyond Academics - Interest Cloud */
+.interest-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 18px 25px;
+    padding: 35px 15px;
+}
+
+.interest-cloud span {
+    color: inherit;
+    line-height: 1.3;
+    transition: transform 0.2s ease;
+}
+
+.interest-cloud span:hover {
+    transform: scale(1.1);
+}
+  
 </style>
 </head>
 <body>
@@ -221,9 +242,13 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;just
         </div>
 
         <p class="about-text">
-          My research interests lie in the interdisciplinary field of biomedical engineering, particularly in computational neural engineering and the development of neural interfaces, such as non-invasive brain-computer interfaces (BCIs).
-
-          I am especially interested in developing computational methods with machine learning to neural signal processing and decoding. My ultimate goal is to help individuals with neurological impairments regain their ability to interact with the world around them.
+          My research interests lie in the interdisciplinary field of biomedical engineering, particularly in computational \
+          neural engineering and the development of neural interfaces, such as non-invasive brain-computer interfaces (BCIs).
+        </p>
+        
+        <p>
+          I am especially interested in developing computational methods with machine learning to neural signal processing 
+          and decoding. My ultimate goal is to help individuals with neurological impairments regain their ability to interact with the world around them.
         </p>
         <div class="taglist">
           <span class="tag">Brain–Computer Interfaces</span>
@@ -254,10 +279,16 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;just
       <section class="section" id="beyond-academics">
   <h2>Beyond Academics</h2>
 
-  <p>
-    Outside of academics, I enjoy swimming and attending symphony concerts. Butterfly is the stroke I am most passionate about, and you can always find me listening to classical music or playing piano pieces by Schubert:) Currently, I am learning French! I believe nothing I learned would be wasted, the value of it may reveal itself in the most surprising moments.
-  </p>
+  <div class="interest-cloud">
+    <span style="font-size: 32px;">Swimming</span>
+    <span style="font-size: 18px;">French</span>
+    <span style="font-size: 38px;">Classical Music</span>
+    <span style="font-size: 22px;">Piano</span>
+    <span style="font-size: 27px;">DOGS!</span>
+    <span style="font-size: 17px;">E-sports</span>
+  </div>
 </section>
+
 
 
       
