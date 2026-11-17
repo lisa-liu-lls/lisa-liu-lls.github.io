@@ -97,7 +97,7 @@ a:hover{color:var(--blue)}
 .institution{color:var(--ink)}
 .degree{color:var(--ink)}
 
-/* Icon Links Row */
+
 .icon-links{display:flex;align-items:center;gap:14px;margin-bottom:18px}
 .icon-link{color:var(--muted);display:inline-flex;align-items:center;justify-content:center;transition:color 0.2s ease}
 .icon-link:hover{color:var(--blue)}
@@ -139,7 +139,7 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;just
   .contact-strip{flex-direction:column;align-items:flex-start}
 }
 
-/* Shared page and research-interest components */
+
 .interests{padding:36px 0 8px}
 .section-heading{margin-bottom:24px}
 .section-kicker{color:var(--blue);font-size:.72rem;font-weight:700;letter-spacing:.12em}
@@ -161,7 +161,6 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;just
 @media(max-width:760px){.interest-grid{grid-template-columns:1fr}.subpage{padding-top:32px}}
 
 
-/* Beyond Academics - Compact Smoke Cloud */
 #beyond-academics h2 {
   font-size: 1.65rem;
   margin: 0 0 4px;
@@ -186,7 +185,29 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;just
     height: 145px;
   }
 }
+
+.about-quote-text {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.8rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+
+  clip-path: inset(0 50% 0 50%);
+  opacity: 0;
+
+  transition:
+    clip-path 4s cubic-bezier(.45, 0, .2, 1),
+    opacity 0.35s ease;
+}
+
+.about-quote-text.show {
+  clip-path: inset(0 0 0 0);
+  opacity: 1;
+}
+
 </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
   
@@ -265,8 +286,14 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;just
         </div>
       </div>
     </div>
-  </header>
-
+  
+  <div class="about-quote">
+  <div class="about-quote-text">
+    “The best way to predict the future is to invent it.”
+  </div>
+  <div class="about-quote-author">— Alan Kay</div>
+</div>
+</header>
   
 <main>
   <section class="interests" aria-labelledby="interests-title">
@@ -613,39 +640,58 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;just
         requestAnimationFrame(animate);
     }
 
-    root.addEventListener("pointermove", (event) => {
-        if (reducedMotion) return;
+root.addEventListener("pointermove", (event) => {
+      if (reducedMotion) return;
 
-        if (performance.now() - lastHover < 180) return;
+      if (performance.now() - lastHover < 180) return;
 
-        const rect = canvas.getBoundingClientRect();
+      const rect = canvas.getBoundingClientRect();
 
-        hit(
-            event.clientX - rect.left,
-            event.clientY - rect.top
-        );
+      hit(
+          event.clientX - rect.left,
+          event.clientY - rect.top
+      );
 
-        lastHover = performance.now();
-    });
+      lastHover = performance.now();
+  });
 
-    root.addEventListener("click", (event) => {
-        if (reducedMotion) return;
+  root.addEventListener("click", (event) => {
+      if (reducedMotion) return;
 
-        const rect = canvas.getBoundingClientRect();
+      const rect = canvas.getBoundingClientRect();
 
-        hit(
-            event.clientX - rect.left,
-            event.clientY - rect.top
-        );
-    });
+      hit(
+          event.clientX - rect.left,
+          event.clientY - rect.top
+      );
+  });
 
-    resize();
+  resize();
 
-    if (!reducedMotion) {
-        requestAnimationFrame(animate);
-    }
+  if (!reducedMotion) {
+      requestAnimationFrame(animate);
+  }
 })();
-</script>
 
+<script>
+  const quote = document.querySelector(".about-quote-text");
+  const author = document.querySelector(".about-quote-author");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        quote.classList.add("show");
+
+        setTimeout(() => {
+          author.classList.add("show");
+        }, 4100);
+
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  observer.observe(quote);
+</script>
 </body>
 </html>
