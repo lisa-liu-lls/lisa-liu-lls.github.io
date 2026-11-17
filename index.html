@@ -681,21 +681,18 @@ root.addEventListener("pointermove", (event) => {
   const quote = document.querySelector(".about-quote-text");
   const author = document.querySelector(".about-quote-author");
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        quote.classList.add("show");
+  console.log("Quote found:", quote);
+  console.log("Author found:", author);
 
-        setTimeout(() => {
-          author.classList.add("show");
-        }, 4100);
+  if (quote && author) {
+    setTimeout(() => {
+      quote.classList.add("show");
+    }, 500);
 
-        observer.disconnect();
-      }
-    });
-  }, { threshold: 0.3 });
-
-  observer.observe(quote);
+    setTimeout(() => {
+      author.classList.add("show");
+    }, 4600);
+  }
 </script>
 </body>
 </html>
