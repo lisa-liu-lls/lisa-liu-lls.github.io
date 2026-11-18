@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -121,7 +120,6 @@ button, input { font: inherit; }
   color: var(--blue);
 }
 
-/* Page heading — exact original positioning */
 
 .subpage {
   padding: 46px 0 28px;
@@ -149,7 +147,6 @@ button, input { font: inherit; }
   line-height: 1.7;
 }
 
-/* Interactive terminal */
 
 .terminal {
   background: var(--soft);
@@ -288,7 +285,6 @@ button, input { font: inherit; }
   border-color: var(--blue);
 }
 
-/* Footer — same as original */
 
 footer {
   padding: 28px 0 36px;
@@ -354,11 +350,6 @@ footer {
 
   <h1>Projects</h1>
 
-  <p class="page-lead">
-    A collection of projects exploring computational
-    methods, data analysis, and programming.
-    Browse the terminal below to learn more.
-  </p>
 
   <section class="terminal"
            aria-label="Interactive projects terminal">
@@ -378,14 +369,14 @@ footer {
     <div class="terminal-body" id="terminal-body">
 
       <div class="terminal-line">
-        <span class="prompt">Welcome.</span>
+        <span class="prompt">welcome.</span>
         <span class="muted">
-          Explore my projects through this mini-terminal.
+          explore my projects through this mini-terminal.
         </span>
       </div>
 
       <div class="terminal-line muted">
-        Type "help" to see available commands,
+        type "help" to see available commands,
         or "ls" to browse projects.
       </div>
 
@@ -439,9 +430,9 @@ footer {
   </div>
 
   <p class="terminal-help">
-    Tip: Click a project filename or type
+    tip: click a project filename or type
     <code>cat filename.txt</code> to read its description.
-    Use ↑ and ↓ to navigate command history.
+    use ↑ and ↓ to navigate command history.
   </p>
 
 </main>
@@ -500,73 +491,32 @@ toggleBtn.addEventListener("click", () => {
   updateToggleUI();
 });
 
-/* Project data
-   Edit the descriptions below to update your projects.
-*/
-
 const projects = {
   "property.txt": {
-    title: "Property Value Assessment",
+    title: "housing price prediction model",
     description:
-`Machine Learning · Regression · Data Analysis
+`machine learning & regression & data analysis
 
-An end-to-end property valuation project using
-residential real estate data from Cook County.
+· developed an end-to-end machine learning pipeline for residential property valuation using cook county housing data.
+· performed exploratory data analysis and feature engineering, including data cleaning, numerical transformations, and one-hot encoding of categorical variables.
+· trained an ols regression model to predict property sale prices.
+· evaluated predictive performance using rmse and analyzed model errors across different property price ranges.
 
-The project focuses on building a reproducible
-data analysis and modeling workflow, from
-exploratory analysis and feature engineering
-to predictive modeling and evaluation.
-
-Technical work includes:
-- Investigating distributions and relationships
-  between housing attributes and sale prices.
-- Cleaning and transforming numerical and
-  categorical variables.
-- Building an Ordinary Least Squares (OLS)
-  regression model.
-- Evaluating prediction errors and investigating
-  model performance across different price ranges.
-
-Tools: Python, pandas, NumPy, Polars,
+tools: python, numPy, polars,
 scikit-learn, seaborn, matplotlib.
-
-This project strengthened my understanding of
-how statistical assumptions, feature selection,
-and data preprocessing influence the reliability
-of predictive models.
-
-Note: Course-assignment solutions and restricted
-implementation details are not published.`
   },
 
   "scheme.txt": {
-    title: "Scheme Interpreter",
+    title: "scheme interpreter",
     description:
-`Programming Languages · Python · Interpreters
+`developed a python-based interpreter for a subset of the scheme programming language, 
+ supporting lambda expressions and user-defined functions.
 
-A Python-based implementation of an interpreter
-for a subset of the Scheme programming language.
+· supported lambda expressions, function application, and lexical scoping.
+· managed variable bindings and execution environments to support user-defined procedures.
 
-The project explores how a programming language
-is represented, evaluated, and executed.
-
-Technical concepts include:
-- Parsing expressions into structured forms.
-- Evaluating expressions using recursive logic.
-- Managing environments and variable bindings.
-- Implementing special forms and procedures.
-- Understanding the relationship between
-  language syntax and evaluation rules.
-
-Tools: Python, recursion, data structures.
-
-Working on this project deepened my understanding
-of programming language semantics, abstraction,
-and the design of interpreters.
-
-Note: Source code for course-restricted
-assignments is not publicly distributed.`
+working on this project deepened my understanding
+of abstraction and the design of interpreters.
   }
 };
 
