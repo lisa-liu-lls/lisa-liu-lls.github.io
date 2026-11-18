@@ -1,5 +1,12 @@
+
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Projects — Lisa Liu</title><style>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Lisa Liu</title>
+
+<style>
 :root {
   --bg: #14181d;
   --ink: #e6edf3;
@@ -9,7 +16,9 @@
   --soft: #1b2129;
   --tag-bg: #1f2732;
   --tag-text: #a0aec0;
-  --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font: Inter, ui-sans-serif, system-ui,
+          -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
 }
 
 [data-theme="light"] {
@@ -23,181 +32,717 @@
   --tag-text: #475569;
 }
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
-  background-color: var(--bg);
+  background: var(--bg);
   color: var(--ink);
   font-family: var(--font);
   line-height: 1.5;
-  font-size: 0.92rem;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-a{color:inherit;text-decoration:none}
-a:hover{color:var(--blue)}
-
-.container{max-width:960px;margin:auto;padding:0 24px}
-
-.nav{padding:20px 0;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
-.brand{font-size:.95rem;font-weight:700;letter-spacing:.03em}
-.nav-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-
-.nav-btn{
-  background:var(--soft);
-  color:var(--ink);
-  border:1px solid var(--line);
-  padding:6px 14px;
-  border-radius:6px;
-  font-size:.82rem;
-  font-weight:600;
-  transition:all 0.2s ease;
-}
-.nav-btn:hover, .nav-btn.active{
-  border-color:var(--blue);
-  color:var(--blue);
+  font-size: .92rem;
+  transition: background-color .2s, color .2s;
 }
 
-.theme-toggle{
-  background:var(--soft);
-  color:var(--ink);
-  border:1px solid var(--line);
-  padding:6px 12px;
-  border-radius:16px;
-  cursor:pointer;
-  font-size:.75rem;
-  font-weight:600;
-  display:flex;
-  align-items:center;
-  gap:6px;
-  margin-left:8px;
-  transition:all 0.2s ease;
-}
-.theme-toggle:hover{border-color:var(--blue);color:var(--blue)}
-
-.hero{padding:40px 0 32px;border-bottom:1px solid var(--line)}
-.hero-grid{display:grid;grid-template-columns:240px 1fr;gap:36px;align-items:start}
-
-.profile-photo{
-  width:100%;
-  height:300px;
-  border-radius:10px;
-  object-fit:cover;
-  border:1px solid var(--line);
-  background:var(--soft);
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.hero-info h1{font-size:2.3rem;line-height:1.1;font-weight:700;margin:0 0 6px}
-.meta-line{display:flex;align-items:center;gap:8px;margin-bottom:14px;font-size:0.9rem;flex-wrap:wrap}
-.institution{font-weight:650;color:var(--ink)}
-.degree{color:var(--muted)}
+a:hover { color: var(--blue); }
 
-/* Icon Links Row */
-.icon-links{display:flex;align-items:center;gap:14px;margin-bottom:18px}
-.icon-link{color:var(--muted);display:inline-flex;align-items:center;justify-content:center;transition:color 0.2s ease}
-.icon-link:hover{color:var(--blue)}
-.cv-badge{
-  font-size:0.75rem;
-  font-weight:700;
-  text-transform:lowercase;
-  border:1.8px solid currentColor;
-  border-radius:5px;
-  padding:1px 7px;
-  line-height:1.2;
-  letter-spacing:-0.02em;
+button, input { font: inherit; }
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 0 24px;
 }
 
-.about-text{
-  color:var(--muted);
-  font-size:0.92rem;
-  line-height:1.6;
-  margin:0 0 16px;
-  border-top:1px solid var(--line);
-  padding-top:16px;
+/* Navigation — same as original */
+
+.nav {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
 }
 
-.taglist{display:flex;flex-wrap:wrap;gap:6px}
-.tag{background:var(--tag-bg);color:var(--tag-text);padding:4px 9px;border-radius:4px;font-size:.74rem;font-weight:600}
-
-.contact-strip{background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;margin-top:32px;gap:16px}
-.contact-strip h3{margin:0;font-size:.95rem;font-weight:650}
-.contact-btn{background:var(--blue);color:#fff;padding:7px 16px;border-radius:4px;font-weight:600;font-size:0.82rem;white-space:nowrap}
-.contact-btn:hover{opacity:0.9;color:#fff}
-
-footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;justify-content:space-between;margin-top:32px;border-top:1px solid var(--line)}
-
-@media(max-width:760px){
-  .hero-grid{grid-template-columns:1fr;gap:20px}
-  .profile-photo{height:240px;width:200px}
-  .nav{flex-direction:column;align-items:flex-start;gap:14px}
-  .nav-right{width:100%;justify-content:flex-start}
-  .contact-strip{flex-direction:column;align-items:flex-start}
+.brand {
+  font-size: .95rem;
+  font-weight: 700;
+  letter-spacing: .03em;
 }
 
-/* Shared page and research-interest components */
-.interests{padding:36px 0 8px}
-.section-heading{margin-bottom:24px}
-.section-kicker{color:var(--blue);font-size:.72rem;font-weight:700;letter-spacing:.12em}
-.section-heading h2{font-size:1.65rem;letter-spacing:-.025em;margin:8px 0 8px}
-.section-heading p{color:var(--muted);margin:0;max-width:720px;line-height:1.7}
-.interest-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.interest-card{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:21px 22px}
-.interest-card h3{font-size:1rem;margin:0 0 10px;font-weight:650}
-.interest-card p{font-size:.87rem;color:var(--muted);line-height:1.7;margin:0}
-.subpage{padding:46px 0 28px;min-height:55vh}
-.page-eyebrow{font-size:.72rem;color:var(--blue);font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-.subpage h1{font-size:2.2rem;letter-spacing:-.035em;margin:8px 0 12px}
-.page-lead{max-width:720px;color:var(--muted);margin:0 0 35px;line-height:1.7}
-.page-card{padding:22px 0;border-top:1px solid var(--line)}
-.page-card h2{font-size:1.13rem;margin:0 0 7px}
-.page-card p{color:var(--muted);margin:0;line-height:1.7}
-.page-card .meta{font-size:.82rem;color:var(--blue);margin-bottom:9px}
-.page-card ul{color:var(--muted);padding-left:20px;line-height:1.8}
-.page-card ul li{margin-bottom:5px}
-@media(max-width:760px){.interest-grid{grid-template-columns:1fr}.subpage{padding-top:32px}}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 
-</style></head>
-<body><div class="container">
-  <nav class="nav">
-    <a class="brand" href="../index.html">Lisa Liu</a>
-    <div class="nav-right">
-      <a class="nav-btn" href="../index.html">About</a>
-      <a class="nav-btn" href="../research/">Research</a>
-      <a class="nav-btn active" href="../projects/" aria-current="page">Projects</a>
-      <a class="nav-btn" href="../teaching/">Teaching</a>
-      <a class="nav-btn" href="../coursework/">Coursework</a>
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme"><span id="toggle-icon">☀️</span><span id="toggle-text">Light Mode</span></button>
+.nav-btn {
+  background: var(--soft);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: .82rem;
+  font-weight: 600;
+  transition: all .2s ease;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.theme-toggle {
+  background: var(--soft);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  padding: 6px 12px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: .75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 8px;
+}
+
+.theme-toggle:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+/* Page heading — exact original positioning */
+
+.subpage {
+  padding: 46px 0 28px;
+  min-height: 55vh;
+}
+
+.page-eyebrow {
+  font-size: .72rem;
+  color: var(--blue);
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.subpage h1 {
+  font-size: 2.2rem;
+  letter-spacing: -.035em;
+  margin: 8px 0 12px;
+}
+
+.page-lead {
+  max-width: 720px;
+  color: var(--muted);
+  margin: 0 0 35px;
+  line-height: 1.7;
+}
+
+/* Interactive terminal */
+
+.terminal {
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+.terminal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 17px;
+  border-bottom: 1px solid var(--line);
+  gap: 12px;
+}
+
+.terminal-title {
+  font-family: ui-monospace, SFMono-Regular,
+               Menlo, Consolas, monospace;
+  font-size: .78rem;
+  color: var(--muted);
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 7px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--line);
+}
+
+.dot:first-child { background: #e57b78; }
+.dot:nth-child(2) { background: #e6b65c; }
+.dot:nth-child(3) { background: #70bd91; }
+
+.terminal-body {
+  padding: 22px;
+  min-height: 340px;
+  max-height: 560px;
+  overflow-y: auto;
+  font-family: ui-monospace, SFMono-Regular,
+               Menlo, Consolas, monospace;
+  font-size: .83rem;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.terminal-output {
+  white-space: pre-wrap;
+}
+
+.terminal-line {
+  margin-bottom: 12px;
+}
+
+.prompt {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.muted { color: var(--muted); }
+
+.command-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.command-input {
+  background: transparent;
+  color: var(--ink);
+  border: none;
+  outline: none;
+  flex: 1;
+  min-width: 0;
+  font-family: inherit;
+  font-size: inherit;
+  caret-color: var(--blue);
+}
+
+.command-input::placeholder {
+  color: var(--muted);
+  opacity: .65;
+}
+
+.file-link {
+  display: block;
+  width: fit-content;
+  color: var(--blue);
+  cursor: pointer;
+  padding: 2px 0;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.file-link:hover {
+  text-decoration: underline;
+}
+
+.terminal-help {
+  color: var(--muted);
+  font-size: .8rem;
+  margin-top: 14px;
+  line-height: 1.7;
+}
+
+.quick-commands {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.quick-btn {
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 7px 11px;
+  font-size: .75rem;
+  font-family: ui-monospace, SFMono-Regular,
+               Menlo, Consolas, monospace;
+  cursor: pointer;
+}
+
+.quick-btn:hover {
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+/* Footer — same as original */
+
+footer {
+  padding: 28px 0 36px;
+  color: var(--muted);
+  font-size: .78rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+  border-top: 1px solid var(--line);
+}
+
+@media(max-width:760px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .nav-right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .subpage { padding-top: 32px; }
+
+  .terminal-body { padding: 16px; }
+
+  .terminal-header { padding: 12px; }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<nav class="nav">
+  <a class="brand" href="../index.html">Lisa Liu</a>
+
+  <div class="nav-right">
+    <a class="nav-btn" href="../index.html">About</a>
+    <a class="nav-btn" href="../research/">Research</a>
+    <a class="nav-btn active"
+       href="../projects/"
+       aria-current="page">Projects</a>
+    <a class="nav-btn" href="../teaching/">Teaching</a>
+    <a class="nav-btn" href="../coursework/">Coursework</a>
+
+    <button id="theme-toggle"
+            class="theme-toggle"
+            type="button"
+            aria-label="Toggle theme">
+      <span id="toggle-icon">☀️</span>
+      <span id="toggle-text">Light Mode</span>
+    </button>
+  </div>
+</nav>
+
+<main class="subpage">
+
+  <div class="page-eyebrow">
+    Lisa Liu · UC Berkeley
+  </div>
+
+  <h1>Projects</h1>
+
+  <p class="page-lead">
+    A collection of projects exploring computational
+    methods, data analysis, and programming.
+    Browse the terminal below to learn more.
+  </p>
+
+  <section class="terminal"
+           aria-label="Interactive projects terminal">
+
+    <div class="terminal-header">
+      <div class="terminal-dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+
+      <span class="terminal-title">
+        lisa@berkeley: ~/projects
+      </span>
     </div>
-  </nav>
-<main class="subpage"><div class="page-eyebrow">Lisa Liu · UC Berkeley</div><h1>Projects</h1><p class="page-lead">Professional experience, research appointments, and technical contributions.</p><article class="page-card"><h2>[Position Title]</h2><div class="meta">[Organization / Lab] · [Dates]</div><p>[Describe your responsibilities, technical work, and measurable results.]</p></article>
-<article class="page-card"><h2>[Additional Position]</h2><div class="meta">[Organization] · [Dates]</div><p>[Add another role here, or remove this entry until you need it.]</p></article></main>
-<footer><span>© 2026 Lisa Liu</span><span><a href="../index.html">← Back to Home</a></span></footer>
-</div><script>
-  if (localStorage.getItem('theme') === 'light') {
-    document.documentElement.setAttribute('data-theme', 'light');
-  }
-  const toggleBtn = document.getElementById('theme-toggle');
-  const toggleText = document.getElementById('toggle-text');
-  const toggleIcon = document.getElementById('toggle-icon');
 
-  function updateToggleUI() {
-    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-    toggleText.textContent = isLight ? 'Dark Mode' : 'Light Mode';
-    toggleIcon.textContent = isLight ? '🌙' : '☀️';
+    <div class="terminal-body" id="terminal-body">
+
+      <div class="terminal-line">
+        <span class="prompt">Welcome.</span>
+        <span class="muted">
+          Explore my projects through this mini-terminal.
+        </span>
+      </div>
+
+      <div class="terminal-line muted">
+        Type "help" to see available commands,
+        or "ls" to browse projects.
+      </div>
+
+      <div id="terminal-history"
+           class="terminal-output"
+           aria-live="polite"></div>
+
+      <form id="command-form"
+            class="command-line"
+            autocomplete="off">
+
+        <label for="command-input"
+               class="prompt">
+          lisa@projects:~$
+        </label>
+
+        <input
+          id="command-input"
+          class="command-input"
+          type="text"
+          placeholder="Enter a command..."
+          aria-label="Terminal command"
+          spellcheck="false"
+          autocomplete="off"
+        >
+
+      </form>
+
+    </div>
+  </section>
+
+  <div class="quick-commands">
+    <button class="quick-btn"
+            data-command="help">help</button>
+
+    <button class="quick-btn"
+            data-command="ls">ls</button>
+
+    <button class="quick-btn"
+            data-command="cat property.txt">
+      cat property.txt
+    </button>
+
+    <button class="quick-btn"
+            data-command="cat scheme.txt">
+      cat scheme.txt
+    </button>
+
+    <button class="quick-btn"
+            data-command="clear">clear</button>
+  </div>
+
+  <p class="terminal-help">
+    Tip: Click a project filename or type
+    <code>cat filename.txt</code> to read its description.
+    Use ↑ and ↓ to navigate command history.
+  </p>
+
+</main>
+
+<footer>
+  <span>© 2026 Lisa Liu</span>
+  <span>
+    <a href="../index.html">← Back to Home</a>
+  </span>
+</footer>
+
+</div>
+
+<script>
+/* Theme */
+
+if (localStorage.getItem("theme") === "light") {
+  document.documentElement.setAttribute(
+    "data-theme", "light"
+  );
+}
+
+const toggleBtn = document.getElementById("theme-toggle");
+const toggleText = document.getElementById("toggle-text");
+const toggleIcon = document.getElementById("toggle-icon");
+
+function updateToggleUI() {
+  const isLight =
+    document.documentElement.getAttribute("data-theme")
+    === "light";
+
+  toggleText.textContent =
+    isLight ? "Dark Mode" : "Light Mode";
+
+  toggleIcon.textContent =
+    isLight ? "🌙" : "☀️";
+}
+
+updateToggleUI();
+
+toggleBtn.addEventListener("click", () => {
+  const isLight =
+    document.documentElement.getAttribute("data-theme")
+    === "light";
+
+  if (isLight) {
+    document.documentElement.removeAttribute("data-theme");
+    localStorage.setItem("theme", "dark");
+  } else {
+    document.documentElement.setAttribute(
+      "data-theme", "light"
+    );
+    localStorage.setItem("theme", "light");
   }
+
   updateToggleUI();
+});
 
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', function() {
-      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-      if (isLight) {
-        document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-      }
-      updateToggleUI();
-    });
+/* Project data
+   Edit the descriptions below to update your projects.
+*/
+
+const projects = {
+  "property.txt": {
+    title: "Property Value Assessment",
+    description:
+`Machine Learning · Regression · Data Analysis
+
+An end-to-end property valuation project using
+residential real estate data from Cook County.
+
+The project focuses on building a reproducible
+data analysis and modeling workflow, from
+exploratory analysis and feature engineering
+to predictive modeling and evaluation.
+
+Technical work includes:
+- Investigating distributions and relationships
+  between housing attributes and sale prices.
+- Cleaning and transforming numerical and
+  categorical variables.
+- Building an Ordinary Least Squares (OLS)
+  regression model.
+- Evaluating prediction errors and investigating
+  model performance across different price ranges.
+
+Tools: Python, pandas, NumPy, Polars,
+scikit-learn, seaborn, matplotlib.
+
+This project strengthened my understanding of
+how statistical assumptions, feature selection,
+and data preprocessing influence the reliability
+of predictive models.
+
+Note: Course-assignment solutions and restricted
+implementation details are not published.`
+  },
+
+  "scheme.txt": {
+    title: "Scheme Interpreter",
+    description:
+`Programming Languages · Python · Interpreters
+
+A Python-based implementation of an interpreter
+for a subset of the Scheme programming language.
+
+The project explores how a programming language
+is represented, evaluated, and executed.
+
+Technical concepts include:
+- Parsing expressions into structured forms.
+- Evaluating expressions using recursive logic.
+- Managing environments and variable bindings.
+- Implementing special forms and procedures.
+- Understanding the relationship between
+  language syntax and evaluation rules.
+
+Tools: Python, recursion, data structures.
+
+Working on this project deepened my understanding
+of programming language semantics, abstraction,
+and the design of interpreters.
+
+Note: Source code for course-restricted
+assignments is not publicly distributed.`
   }
-</script></body></html>
+};
+
+const historyElement =
+  document.getElementById("terminal-history");
+
+const terminalBody =
+  document.getElementById("terminal-body");
+
+const commandForm =
+  document.getElementById("command-form");
+
+const commandInput =
+  document.getElementById("command-input");
+
+const commandHistory = [];
+let historyIndex = 0;
+
+/* Safely render output as text */
+
+function addLine(content, className = "") {
+  const line = document.createElement("div");
+  line.className = "terminal-line " + className;
+  line.textContent = content;
+  historyElement.appendChild(line);
+  scrollToBottom();
+}
+
+function scrollToBottom() {
+  terminalBody.scrollTop = terminalBody.scrollHeight;
+}
+
+/* List clickable project filenames */
+
+function showFiles() {
+  const container = document.createElement("div");
+  container.className = "terminal-line";
+
+  Object.keys(projects).forEach(filename => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "file-link";
+    button.textContent = filename;
+
+    button.addEventListener("click", () => {
+      executeCommand("cat " + filename);
+    });
+
+    container.appendChild(button);
+  });
+
+  historyElement.appendChild(container);
+  scrollToBottom();
+}
+
+/* Command processing */
+
+function runCommand(command) {
+  const normalized = command.trim().toLowerCase();
+
+  if (normalized === "help") {
+    addLine(
+`Available commands:
+
+help                Show available commands
+ls                  List projects
+cat property.txt    Property Value Assessment
+cat scheme.txt      Scheme Interpreter
+clear               Clear terminal output
+
+Click any filename to open its description.`
+    );
+    return;
+  }
+
+  if (normalized === "ls") {
+    showFiles();
+    return;
+  }
+
+  if (normalized === "clear") {
+    historyElement.replaceChildren();
+    return;
+  }
+
+  if (normalized.startsWith("cat ")) {
+    const filename = normalized.slice(4).trim();
+    const project = projects[filename];
+
+    if (project) {
+      addLine(
+        project.title + "\n\n" + project.description
+      );
+    } else {
+      addLine("cat: " + filename + ": No such file");
+    }
+    return;
+  }
+
+  if (normalized === "") return;
+
+  addLine(
+    "Command not found: " + command +
+    '\nType "help" for available commands.'
+  );
+}
+
+function executeCommand(command) {
+  const trimmed = command.trim();
+
+  if (!trimmed) return;
+
+  if (trimmed.toLowerCase() === "clear") {
+    runCommand(trimmed);
+  } else {
+    addLine("lisa@projects:~$ " + trimmed, "prompt");
+    runCommand(trimmed);
+  }
+
+  commandHistory.push(trimmed);
+  historyIndex = commandHistory.length;
+
+  commandInput.value = "";
+  commandInput.focus();
+}
+
+/* Keyboard input */
+
+commandForm.addEventListener("submit", event => {
+  event.preventDefault();
+  executeCommand(commandInput.value);
+});
+
+commandInput.addEventListener("keydown", event => {
+  if (event.key === "ArrowUp") {
+    event.preventDefault();
+
+    if (historyIndex > 0) {
+      historyIndex--;
+    }
+
+    commandInput.value =
+      commandHistory[historyIndex] || "";
+  }
+
+  if (event.key === "ArrowDown") {
+    event.preventDefault();
+
+    if (historyIndex < commandHistory.length) {
+      historyIndex++;
+    }
+
+    commandInput.value =
+      commandHistory[historyIndex] || "";
+  }
+});
+
+/* Quick command buttons */
+
+document.querySelectorAll("[data-command]")
+  .forEach(button => {
+    button.addEventListener("click", () => {
+      executeCommand(button.dataset.command);
+    });
+  });
+
+/* Focus terminal when clicking empty terminal area */
+
+terminalBody.addEventListener("click", event => {
+  if (
+    event.target === terminalBody ||
+    event.target === historyElement
+  ) {
+    commandInput.focus();
+  }
+});
+</script>
+</body>
+</html>
