@@ -12,4 +12,4 @@ This is a static HTML website ready for GitHub Pages.
 
 ##2. Updates
 
-- 11/14/2026 message: Hi! Thank you to everyone who is checking out my website! This website is developed using HTML5 and CSS. Please feel free to explore!
+- 11/14/2026 message: hi! thank you to everyone who is checking out my website. this website is developed using html5, css, and javascript. please feel free to explore!
