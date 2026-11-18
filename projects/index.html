@@ -503,7 +503,7 @@ const projects = {
 · evaluated predictive performance using rmse and analyzed model errors across different property price ranges.
 
 tools: python, numPy, polars,
-scikit-learn, seaborn, matplotlib.
+scikit-learn, seaborn, matplotlib.`
   },
 
   "scheme.txt": {
@@ -516,7 +516,7 @@ scikit-learn, seaborn, matplotlib.
 · managed variable bindings and execution environments to support user-defined procedures.
 
 working on this project deepened my understanding
-of abstraction and the design of interpreters.
+of abstraction and the design of interpreters.`
   }
 };
 
@@ -579,13 +579,13 @@ function runCommand(command) {
 
   if (normalized === "help") {
     addLine(
-`Available commands:
+`available commands:
 
-help                Show available commands
-ls                  List projects
-cat property.txt    Property Value Assessment
-cat scheme.txt      Scheme Interpreter
-clear               Clear terminal output
+help                show available commands
+ls                  list projects
+cat property.txt    housing price prediction model
+cat scheme.txt      scheme interpreter
+clear               clear terminal output
 
 Click any filename to open its description.`
     );
@@ -642,8 +642,6 @@ function executeCommand(command) {
   commandInput.value = "";
   commandInput.focus();
 }
-
-/* Keyboard input */
 
 commandForm.addEventListener("submit", event => {
   event.preventDefault();
