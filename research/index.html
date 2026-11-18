@@ -92,7 +92,6 @@ a:hover{color:var(--blue)}
 .institution{font-weight:650;color:var(--ink)}
 .degree{color:var(--muted)}
 
-/* Icon Links Row */
 .icon-links{display:flex;align-items:center;gap:14px;margin-bottom:18px}
 .icon-link{color:var(--muted);display:inline-flex;align-items:center;justify-content:center;transition:color 0.2s ease}
 .icon-link:hover{color:var(--blue)}
@@ -134,7 +133,6 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;just
   .contact-strip{flex-direction:column;align-items:flex-start}
 }
 
-/* Shared page and research-interest components */
 .interests{padding:36px 0 8px}
 .section-heading{margin-bottom:24px}
 .section-kicker{color:var(--blue);font-size:.72rem;font-weight:700;letter-spacing:.12em}
@@ -169,35 +167,48 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;just
       <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme"><span id="toggle-icon">☀️</span><span id="toggle-text">Light Mode</span></button>
     </div>
   </nav>
-<main class="subpage"><div class="page-eyebrow">Lisa Liu · UC Berkeley</div><h1>Research</h1><p class="page-lead">Research experience, ongoing projects, and computational neuroscience interests.</p><article class="page-card"><h2>Research Projects</h2><div class="meta">[Project title · Lab / institution · Dates]</div><p>[Describe your research question, methods, tools, and your specific contributions. Add a link to a paper, poster, or GitHub repository when available.]</p></article>
-<article class="page-card"><h2>Areas of Interest</h2><div class="meta">Machine Learning · Signal Processing · Non-invasive BCI</div><p>I am especially interested in neural signal analysis, EEG/fNIRS data, and computational methods for understanding brain activity. [Edit this summary to match your current work.]</p></article></main>
+<main class="subpage"><div class="page-eyebrow">Lisa Liu · UC Berkeley</div>
+  <h1>Research</h1>
+<p class="page-lead">[placeholder: title]</p><article class="page-card">
+<h2>Research Projects</h2><div class="meta">[placeholder: subtitle]</div>
+<p>[placeholder: content]</p></article><article class="page-card">
+    
+<p class="page-lead">[placeholder: title]</p><article class="page-card">
+<h2>Research Projects</h2><div class="meta">[placeholder: subtitle]</div>
+<p>[placeholder: content]</p></article><article class="page-card">
+<main/>
+
+  
 <footer><span>© 2026 Lisa Liu</span><span><a href="../index.html">← Back to Home</a></span></footer>
-</div><script>
-  if (localStorage.getItem('theme') === 'light') {
-    document.documentElement.setAttribute('data-theme', 'light');
-  }
-  const toggleBtn = document.getElementById('theme-toggle');
-  const toggleText = document.getElementById('toggle-text');
-  const toggleIcon = document.getElementById('toggle-icon');
+</div>
+  
+  
+<script>
+if (localStorage.getItem('theme') === 'light') {
+  document.documentElement.setAttribute('data-theme', 'light');
+}
+const toggleBtn = document.getElementById('theme-toggle');
+const toggleText = document.getElementById('toggle-text');
+const toggleIcon = document.getElementById('toggle-icon');
 
-  function updateToggleUI() {
+function updateToggleUI() {
+  const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+  toggleText.textContent = isLight ? 'Dark Mode' : 'Light Mode';
+  toggleIcon.textContent = isLight ? '🌙' : '☀️';
+}
+updateToggleUI();
+
+if (toggleBtn) {
+  toggleBtn.addEventListener('click', function() {
     const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-    toggleText.textContent = isLight ? 'Dark Mode' : 'Light Mode';
-    toggleIcon.textContent = isLight ? '🌙' : '☀️';
-  }
-  updateToggleUI();
-
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', function() {
-      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-      if (isLight) {
-        document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-      }
-      updateToggleUI();
-    });
-  }
+    if (isLight) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem('theme', 'light');
+    }
+    updateToggleUI();
+  });
+}
 </script></body></html>
