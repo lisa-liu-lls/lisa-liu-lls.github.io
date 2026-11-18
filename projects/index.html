@@ -60,8 +60,6 @@ button, input { font: inherit; }
   padding: 0 24px;
 }
 
-/* Navigation — same as original */
-
 .nav {
   padding: 20px 0;
   display: flex;
@@ -413,6 +411,11 @@ footer {
 
     <button class="quick-btn"
             data-command="ls">ls</button>
+    
+    <button class="quick-btn"
+            data-command="cat personal_website.txt">
+      cat personal_website.txt
+    </button>
 
     <button class="quick-btn"
             data-command="cat property.txt">
@@ -422,6 +425,11 @@ footer {
     <button class="quick-btn"
             data-command="cat scheme.txt">
       cat scheme.txt
+    </button>
+
+    <button class="quick-btn"
+            data-command="cat skills.txt">
+      cat skills.txt
     </button>
 
     <button class="quick-btn"
@@ -445,7 +453,6 @@ footer {
 </div>
 
 <script>
-/* Theme */
 
 if (localStorage.getItem("theme") === "light") {
   document.documentElement.setAttribute(
@@ -490,8 +497,17 @@ toggleBtn.addEventListener("click", () => {
 });
 
 const projects = {
+  "personal_website.txt": {
+    title: "my personal website (2026)",
+    description:
+`hooray! you're exploring the very project you're reading about! 
+ · this website is developed using html5, css3, and javascript. 
+ · built an interactive terminal interface!
+ thank you for checking it out!`
+  }
+    
   "property.txt": {
-    title: "housing price prediction model",
+    title: "housing price prediction model (2026)",
     description:
 `machine learning & regression & data analysis
 
@@ -505,7 +521,7 @@ scikit-learn, seaborn, matplotlib.`
   },
 
   "scheme.txt": {
-    title: "scheme interpreter",
+    title: "scheme interpreter (2025)",
     description:
 `developed a python-based interpreter for a subset of the scheme programming language, 
  supporting lambda expressions and user-defined functions.
@@ -515,6 +531,18 @@ scikit-learn, seaborn, matplotlib.`
 
 working on this project deepened my understanding
 of abstraction and the design of interpreters.`
+  }
+
+  "skills.txt": {
+    title: "skills",
+    description:
+`
+· programming: python, sql, java, matlab, go, latex
+· machine learning: regularization, feature engineering, ccikit-learn, hyperparameter tuning
+· data analysis: data cleaning, data visualization, hypothesis testing
+· software and tools: Cinema4D (CAD), NumPy, seaborn, GIS, AQuA, Origin
+· wet lab: transduction, media change
+· languages: english, mandarin, french`
   }
 };
 
@@ -533,8 +561,6 @@ const commandInput =
 const commandHistory = [];
 let historyIndex = 0;
 
-/* Safely render output as text */
-
 function addLine(content, className = "") {
   const line = document.createElement("div");
   line.className = "terminal-line " + className;
@@ -546,8 +572,6 @@ function addLine(content, className = "") {
 function scrollToBottom() {
   terminalBody.scrollTop = terminalBody.scrollHeight;
 }
-
-/* List clickable project filenames */
 
 function showFiles() {
   const container = document.createElement("div");
@@ -570,8 +594,6 @@ function showFiles() {
   scrollToBottom();
 }
 
-/* Command processing */
-
 function runCommand(command) {
   const normalized = command.trim().toLowerCase();
 
@@ -579,16 +601,19 @@ function runCommand(command) {
     addLine(
 `available commands:
 
-help                show available commands
-ls                  list projects
-cat property.txt    housing price prediction model
-cat scheme.txt      scheme interpreter
-clear               clear terminal output
+help                        show available commands
+ls                          list projects
+cat personal_website.txt    my personal website
+cat property.txt            housing price prediction model
+cat scheme.txt              scheme interpreter
+cat skills.txt              view technical skills
+clear                       clear terminal output
 
 Click any filename to open its description.`
     );
     return;
   }
+  
 
   if (normalized === "ls") {
     showFiles();
@@ -670,16 +695,12 @@ commandInput.addEventListener("keydown", event => {
   }
 });
 
-/* Quick command buttons */
-
 document.querySelectorAll("[data-command]")
   .forEach(button => {
     button.addEventListener("click", () => {
       executeCommand(button.dataset.command);
     });
   });
-
-/* Focus terminal when clicking empty terminal area */
 
 terminalBody.addEventListener("click", event => {
   if (
@@ -688,6 +709,16 @@ terminalBody.addEventListener("click", event => {
   ) {
     commandInput.focus();
   }
+});
+  
+document.getElementById("skills-button")
+  .addEventListener("click", () => {
+    executeCommand("cat skills.txt");
+  });
+
+document.getElementById("personal_website-button")
+.addEventListener("click", () => {
+  executeCommand("cat personal_website.txt");
 });
 </script>
 </body>
