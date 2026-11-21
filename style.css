@@ -9,6 +9,7 @@
   --tag-text: #a0aec0;
   --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
+
 [data-theme="light"] {
   --bg: #f5f7f9;
   --ink: #1e293b;
@@ -19,6 +20,7 @@
   --tag-bg: #e2e8f0;
   --tag-text: #475569;
 }
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body {
@@ -30,6 +32,7 @@ body {
   font-size: 0.92rem;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
+
 a{color:inherit;text-decoration:none}
 a:hover{color:var(--blue)}
 .container{max-width:960px;margin:auto;padding:0 24px}
@@ -46,10 +49,12 @@ a:hover{color:var(--blue)}
   font-weight:600;
   transition:all 0.2s ease;
 }
+
 .nav-btn:hover, .nav-btn.active{
   border-color:var(--blue);
   color:var(--blue);
 }
+
 .theme-toggle{
   background:var(--soft);
   color:var(--ink);
@@ -65,6 +70,7 @@ a:hover{color:var(--blue)}
   margin-left:8px;
   transition:all 0.2s ease;
 }
+
 .theme-toggle:hover{border-color:var(--blue);color:var(--blue)}
 .hero{padding:40px 0 32px;border-bottom:1px solid var(--line)}
 .hero-grid{display:grid;grid-template-columns:240px 1fr;gap:36px;align-items:start}
@@ -76,6 +82,7 @@ a:hover{color:var(--blue)}
   border:1px solid var(--line);
   background:var(--soft);
 }
+
 .hero-info h1{font-size:2.3rem;line-height:1.1;font-weight:700;margin:0 0 6px}
 .meta-line{display:flex;align-items:center;gap:8px;margin-bottom:14px;font-size:0.9rem;flex-wrap:wrap}
 .institution{color:var(--ink)}
@@ -93,6 +100,7 @@ a:hover{color:var(--blue)}
   line-height:1.2;
   letter-spacing:-0.02em;
 }
+
 .about-text{
   color:var(--ink);
   font-size:0.92rem;
@@ -101,6 +109,7 @@ a:hover{color:var(--blue)}
   border-top:1px solid var(--line);
   padding-top:16px;
 }
+
 .taglist{display:flex;flex-wrap:wrap;gap:6px}
 .tag{background:var(--tag-bg);color:var(--tag-text);padding:4px 9px;border-radius:4px;font-size:.74rem;font-weight:600}
 .contact-strip{background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;margin-top:32px;gap:16px}
@@ -108,6 +117,7 @@ a:hover{color:var(--blue)}
 .contact-btn{background:var(--blue);color:#fff;padding:7px 16px;border-radius:4px;font-weight:600;font-size:0.82rem;white-space:nowrap}
 .contact-btn:hover{opacity:0.9;color:#fff}
 footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;justify-content:space-between;margin-top:32px;border-top:1px solid var(--line)}
+
 @media(max-width:760px){
   .hero-grid{grid-template-columns:1fr;gap:20px}
   .profile-photo{height:240px;width:200px}
@@ -115,10 +125,16 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;just
   .nav-right{width:100%;justify-content:flex-start}
   .contact-strip{flex-direction:column;align-items:flex-start}
 }
+
 .interests{padding:36px 0 8px}
 .section-heading{margin-bottom:24px}
 .section-kicker{color:var(--blue);font-size:.72rem;font-weight:700;letter-spacing:.12em}
-.section-heading h2{font-size:1.65rem;letter-spacing:-.025em;margin:8px 0 8px}
+.section-heading h2,
+.personal-section h2 {
+    font-size: 1.65rem;
+    letter-spacing: -.025em;
+    margin: 8px 0 8px;
+}
 .interest-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .interest-card{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:21px 22px}
 .interest-card h3{font-size:1rem;margin:0 0 10px;font-weight:650}
@@ -140,16 +156,16 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;just
     width: 100%;
     align-items: stretch;
 }
+
 .personal-section {
     min-width: 0;
 }
+
 #leetcode-activity {
     border-left: 1px solid var(--line);
     padding-left: 24px;
 }
-#leetcode-activity h2 {
-    margin-top: 0;
-}
+
 .smoke-cloud {
   position: relative;
   width: 100%;
@@ -157,16 +173,19 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;just
   overflow: hidden;
   margin: 0 auto;
 }
+
 .smoke-cloud canvas {
   display: block;
   width: 100%;
   height: 100%;
 }
+
 @media (max-width: 600px) {
   .smoke-cloud {
     height: 145px;
   }
 }
+
 .about-quote {
   text-align: center;
   margin: 35px auto;
@@ -181,6 +200,7 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;just
   opacity: 1;
   animation: quoteReveal 4s ease-out forwards;
 }
+
 @keyframes quoteReveal {
   from {
     clip-path: inset(0 50% 0 50%);
@@ -189,6 +209,7 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;just
     clip-path: inset(0 0 0 0);
   }
 }
+
 .about-quote-author {
 margin-top: 14px;
 font-size: 0.85rem;
@@ -198,4 +219,39 @@ transition: opacity 0.7s ease;
 }
 .about-quote-author.show {
 opacity: 1;
+}
+
+#leetcode-calendar {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: repeat(5, 1fr);
+    grid-auto-flow: column;
+    gap: 4px;
+    width: 75%;
+    margin: 18px auto 0;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    border-radius: 3px;
+    background: var(--soft);
+    border: 1px solid var(--line);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.calendar-day.active {
+    background: #39d353;
+    border-color: #39d353;
+}
+
+.calendar-day:hover {
+    transform: scale(1.15);
+}
+
+#leetcode-status {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    min-height: 20px;
+    margin-top: 12px;
 }
