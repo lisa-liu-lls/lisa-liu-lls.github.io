@@ -1,233 +1,196 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Coursework — Lisa Liu</title><style>
-:root {
-  --bg: #14181d;
-  --ink: #e6edf3;
-  --muted: #919eab;
-  --line: #262c34;
-  --blue: #58a6ff;
-  --soft: #1b2129;
-  --tag-bg: #1f2732;
-  --tag-text: #a0aec0;
-  --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coursework — Lisa Liu</title>
 
-[data-theme="light"] {
-  --bg: #f5f7f9;
-  --ink: #1e293b;
-  --muted: #64748b;
-  --line: #e2e8f0;
-  --blue: #2563eb;
-  --soft: #eaeff4;
-  --tag-bg: #e2e8f0;
-  --tag-text: #475569;
-}
+  <style>
+    :root {
+      --bg: #14181d;
+      --ink: #e6edf3;
+      --muted: #919eab;
+      --line: #262c34;
+      --blue: #58a6ff;
+      --soft: #1b2129;
+      --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body {
-  margin: 0;
-  background-color: var(--bg);
-  color: var(--ink);
-  font-family: var(--font);
-  line-height: 1.5;
-  font-size: 0.92rem;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-a{color:inherit;text-decoration:none}
-a:hover{color:var(--blue)}
+    [data-theme="light"] {
+      --bg: #f5f7f9;
+      --ink: #1e293b;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --blue: #2563eb;
+      --soft: #eaeff4;
+    }
 
-.container{max-width:960px;margin:auto;padding:0 24px}
+    * {
+      box-sizing: border-box;
+    }
 
-.nav{padding:20px 0;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
-.brand{font-size:.95rem;font-weight:700;letter-spacing:.03em}
-.nav-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.nav-btn{
-  background:var(--soft);
-  color:var(--ink);
-  border:1px solid var(--line);
-  padding:6px 14px;
-  border-radius:6px;
-  font-size:.82rem;
-  font-weight:600;
-  transition:all 0.2s ease;
-}
-.nav-btn:hover, .nav-btn.active{
-  border-color:var(--blue);
-  color:var(--blue);
-}
+    body {
+      margin: 0;
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: var(--font);
+      line-height: 1.5;
+      font-size: 0.92rem;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
 
-.theme-toggle{
-  background:var(--soft);
-  color:var(--ink);
-  border:1px solid var(--line);
-  padding:6px 12px;
-  border-radius:16px;
-  cursor:pointer;
-  font-size:.75rem;
-  font-weight:600;
-  display:flex;
-  align-items:center;
-  gap:6px;
-  margin-left:8px;
-  transition:all 0.2s ease;
-}
-.theme-toggle:hover{border-color:var(--blue);color:var(--blue)}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.hero{padding:40px 0 32px;border-bottom:1px solid var(--line)}
-.hero-grid{display:grid;grid-template-columns:240px 1fr;gap:36px;align-items:start}
+    a:hover {
+      color: var(--blue);
+    }
 
-.profile-photo{
-  width:100%;
-  height:300px;
-  border-radius:10px;
-  object-fit:cover;
-  border:1px solid var(--line);
-  background:var(--soft);
-}
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 0 24px;
+    }
 
-.hero-info h1{font-size:2.3rem;line-height:1.1;font-weight:700;margin:0 0 6px}
-.meta-line{display:flex;align-items:center;gap:8px;margin-bottom:14px;font-size:0.9rem;flex-wrap:wrap}
-.institution{font-weight:650;color:var(--ink)}
-.degree{color:var(--muted)}
+    .nav {
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+    }
 
-/* Icon Links Row */
-.icon-links{display:flex;align-items:center;gap:14px;margin-bottom:18px}
-.icon-link{color:var(--muted);display:inline-flex;align-items:center;justify-content:center;transition:color 0.2s ease}
-.icon-link:hover{color:var(--blue)}
-.cv-badge{
-  font-size:0.75rem;
-  font-weight:700;
-  text-transform:lowercase;
-  border:1.8px solid currentColor;
-  border-radius:5px;
-  padding:1px 7px;
-  line-height:1.2;
-  letter-spacing:-0.02em;
-}
+    .brand {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
 
-.about-text{
-  color:var(--muted);
-  font-size:0.92rem;
-  line-height:1.6;
-  margin:0 0 16px;
-  border-top:1px solid var(--line);
-  padding-top:16px;
-}
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
 
-.taglist{display:flex;flex-wrap:wrap;gap:6px}
-.tag{background:var(--tag-bg);color:var(--tag-text);padding:4px 9px;border-radius:4px;font-size:.74rem;font-weight:600}
+    .nav-btn {
+      background: var(--soft);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
 
-.contact-strip{background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;margin-top:32px;gap:16px}
-.contact-strip h3{margin:0;font-size:.95rem;font-weight:650}
-.contact-btn{background:var(--blue);color:#fff;padding:7px 16px;border-radius:4px;font-weight:600;font-size:0.82rem;white-space:nowrap}
-.contact-btn:hover{opacity:0.9;color:#fff}
+    .nav-btn:hover,
+    .nav-btn.active,
+    .theme-toggle:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
 
-footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;justify-content:space-between;margin-top:32px;border-top:1px solid var(--line)}
+    .theme-toggle {
+      background: var(--soft);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      padding: 6px 12px;
+      border-radius: 16px;
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 8px;
+      transition: all 0.2s ease;
+    }
 
-@media(max-width:760px){
-  .hero-grid{grid-template-columns:1fr;gap:20px}
-  .profile-photo{height:240px;width:200px}
-  .nav{flex-direction:column;align-items:flex-start;gap:14px}
-  .nav-right{width:100%;justify-content:flex-start}
-  .contact-strip{flex-direction:column;align-items:flex-start}
-}
+    .subpage {
+      padding: 46px 0 28px;
+      min-height: 55vh;
+    }
 
-/* Shared page and research-interest components */
-.interests{padding:36px 0 8px}
-.section-heading{margin-bottom:24px}
-.section-kicker{color:var(--blue);font-size:.72rem;font-weight:700;letter-spacing:.12em}
-.section-heading h2{font-size:1.65rem;letter-spacing:-.025em;margin:8px 0 8px}
-.section-heading p{color:var(--muted);margin:0;max-width:720px;line-height:1.7}
-.interest-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.interest-card{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:21px 22px}
-.interest-card h3{font-size:1rem;margin:0 0 10px;font-weight:650}
-.interest-card p{font-size:.87rem;color:var(--muted);line-height:1.7;margin:0}
-.subpage{padding:46px 0 28px;min-height:55vh}
-.page-eyebrow{font-size:.72rem;color:var(--blue);font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-.page-card h2{font-size:1.13rem;margin:0 0 7px}
-.page-card p{color:var(--muted);margin:0;line-height:1.7}
-.page-card .meta{font-size:.82rem;color:var(--blue);margin-bottom:9px}
-.page-card ul{color:var(--muted);padding-left:20px;line-height:1.8}
-.page-card ul li{margin-bottom:5px}
-@media(max-width:760px){.interest-grid{grid-template-columns:1fr}.subpage{padding-top:32px}}
-  
-.coursework {
-  width: 100%;
-  margin: 0;
-}
+    .page-eyebrow {
+      font-size: 0.72rem;
+      color: var(--blue);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
 
-.coursework-intro {
-  color: var(--muted);
-  margin-bottom: 36px;
-}
+    .coursework {
+      width: 100%;
+      margin: 0;
+    }
 
-.semester {
-  margin-bottom: 36px;
-}
+    .semester {
+      margin-bottom: 36px;
+    }
 
-.semester-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 10px;
-  margin-bottom: 12px;
-}
+    .semester-heading {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 10px;
+      margin-bottom: 12px;
+    }
 
-.semester-heading h2 {
-  font-size: 1.15rem;
-  margin: 0;
-}
+    .semester-heading h2 {
+      font-size: 1.15rem;
+      margin: 0;
+    }
 
-.semester-heading > span {
-  color: var(--muted);
-  font-size: 0.8rem;
-}
+    .course {
+      padding: 12px 4px;
+    }
 
-.course {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  padding: 12px 4px;
-}
+    footer {
+      padding: 28px 0 36px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 32px;
+      border-top: 1px solid var(--line);
+    }
 
-.course-category {
-  display: inline-block;
-  background: var(--tag-bg);
-  color: var(--tag-text);
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 4px 12px;
-  font-size: 0.78rem;
-  line-height: 1.3;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
+    @media (max-width: 760px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
 
+      .nav-right {
+        width: 100%;
+        justify-content: flex-start;
+      }
 
-@media (max-width: 600px) {
-  .course {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 4px;
-  }
-}
-</style>
+      .subpage {
+        padding-top: 32px;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <div class="container">
     <nav class="nav">
       <a class="brand" href="../index.html">Lisa Liu</a>
+
       <div class="nav-right">
         <a class="nav-btn" href="../index.html">About</a>
         <a class="nav-btn" href="../research/">Research</a>
         <a class="nav-btn" href="../projects/">Projects</a>
         <a class="nav-btn" href="../teaching/">Teaching</a>
         <a class="nav-btn active" href="./">Coursework</a>
+
         <button id="theme-toggle" class="theme-toggle" type="button">
           <span id="toggle-icon">☀️</span>
           <span id="toggle-text">Light Mode</span>
@@ -235,166 +198,106 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:.78rem;display:flex;just
       </div>
     </nav>
 
-<main class="subpage">
-  <div class="page-eyebrow">LISA LIU · UC BERKELEY</div>
-  <h1>Coursework</h1>
+    <main class="subpage">
+      <div class="page-eyebrow">LISA LIU · UC BERKELEY</div>
+      <h1>Coursework</h1>
 
-  <section class="coursework">
+      <section class="coursework">
+        <div class="semester">
+          <div class="semester-heading">
+            <h2>Spring 2027 (Tentative)</h2>
+          </div>
 
-    <!-- Spring 2027 -->
-    <div class="semester">
-      <div class="semester-heading">
-        <h2>Spring 2027 (Tentative)</h2>
-      </div>
+          <div class="course">DATA C140: Probability for Data Science</div>
+          <div class="course">INDENG 164: Introduction to Optimization Modeling</div>
+          <div class="course">Math 110: Abstract Linear Algebra</div>
+          <div class="course">CompSci 61B: Data Structures</div>
+        </div>
 
-      <div class="course">
-        <span>DATA C140: Probability for Data Science</span>
-        <span class="course-category">Data Science</span>
-      </div>
-      <div class="course">
-        <span>BIOENG C171: Interface Between Neuroethology & Neural Engineering</span>
-        <span class="course-category">Bioengineering</span>
-      </div>
-      <div class="course">
-        <span>NEU 100B: Circuit, Systems and Behavioral Neuroscience</span>
-        <span class="course-category">Neuroscience</span>
-      </div>
-      <div class="course">
-        <span>CompSci 61B: Data Structures</span>
-        <span class="course-category">Computer Science</span>
-      </div>
-    </div>
+        <div class="semester">
+          <div class="semester-heading">
+            <h2>Fall 2026</h2>
+          </div>
 
-    <!-- Fall 2026 -->
-    <div class="semester">
-      <div class="semester-heading">
-        <h2>Fall 2026</h2>
-      </div>
+          <div class="course">DATA C100: Principles and Techniques of Data Science</div>
+          <div class="course">NEU 100A: Cellular and Molecular Neurobiology</div>
+          <div class="course">Physics 8A: Introduction to Physics</div>
+          <div class="course">CS 365: Introduction to Instructional Methods in Computer Science for Academic Interns</div>
+        </div>
 
-      <div class="course">
-        <span>DATA C100: Principles and Techniques of Data Science</span>
-        <span class="course-category">Data Science</span>
-      </div>
-      <div class="course">
-        <span>NEU 100A: Cellular and Molecular Neurobiology</span>
-        <span class="course-category">Neuroscience</span>
-      </div>
-      <div class="course">
-        <span>Physics 8A: Introduction to Physics</span>
-        <span class="course-category">Physics</span>
-      </div>
-      <div class="course">
-        <span>CS 365: Introduction to Instructional Methods in Computer Science for Academic Interns</span>
-        <span class="course-category">Teaching Intern for CompSci 10</span>
-      </div>
-    </div>
+        <div class="semester">
+          <div class="semester-heading">
+            <h2>Summer 2026</h2>
+          </div>
 
-    <!-- Summer 2026 -->
-    <div class="semester">
-      <div class="semester-heading">
-        <h2>Summer 2026</h2>
-      </div>
+          <div class="course">Data C8: Foundations of Data Science</div>
+          <div class="course">ITALIAN R5B: Reading and Composition</div>
+          <div class="course">Digital Infrastructure 101: The Hidden Foundations of the Internet</div>
+        </div>
 
-      <div class="course">
-        <span>Data C8: Foundations of Data Science</span>
-        <span class="course-category">Data Science</span>
-      </div>
-      <div class="course">
-        <span>ITALIAN R5B: Reading and Composition</span>
-        <span class="course-category">College Level Writing</span>
-      </div>
-      <div class="course">
-        <span>Digital Infrastructure 101: The Hidden Foundations of the Internet</span>
-        <span class="course-category">Digital Infrastructure</span>
-      </div>
-    </div>
+        <div class="semester">
+          <div class="semester-heading">
+            <h2>Spring 2026</h2>
+          </div>
 
-    <!-- Spring 2026 -->
-    <div class="semester">
-      <div class="semester-heading">
-        <h2>Spring 2026</h2>
-      </div>
+          <div class="course">Math 54: Linear Algebra and Differential Equations</div>
+          <div class="course">Chem 3A: Chemical Structure and Reactivity</div>
+          <div class="course">COLWRT R4B: Reading and Composition</div>
+          <div class="course">INTEGBI 35AC: Human Biological Variation</div>
+          <div class="course">BIOENG 25: Careers in Biotechnology</div>
+        </div>
 
-      <div class="course">
-        <span>Math 54: Linear Algebra and Differential Equations</span>
-        <span class="course-category">Mathematics</span>
-      </div>
-      <div class="course">
-        <span>Chem 3A: Chemical Structure and Reactivity</span>
-        <span class="course-category">Organic Chemistry</span>
-      </div>
-      <div class="course">
-        <span>COLWRT R4B: Reading and Composition</span>
-        <span class="course-category">College Level Writing</span>
-      </div>
-      <div class="course">
-        <span>INTEGBI 35AC: Human Biological Variation</span>
-        <span class="course-category">American Culture</span>
-      </div>
-      <div class="course">
-        <span>BIOENG 25: Careers in Biotechnology</span>
-        <span class="course-category">Bioengineering</span>
-      </div>
-    </div>
+        <div class="semester">
+          <div class="semester-heading">
+            <h2>Fall 2025</h2>
+          </div>
 
-    <!-- Fall 2025 -->
-    <div class="semester">
-      <div class="semester-heading">
-        <h2>Fall 2025</h2>
-      </div>
+          <div class="course">BIOENG 10: Introduction to Biomedicine for Engineers</div>
+          <div class="course">CompSci 61A: The Structure and Interpretation of Computer Programs</div>
+          <div class="course">Math 53: Multivariable Calculus</div>
+          <div class="course">CHINESE 110A: Introduction to Literary Chinese</div>
+          <div class="course">BIOENG 26: Introduction to Bioengineering</div>
+        </div>
 
-      <div class="course">
-        <span>BIOENG 10: Introduction to Biomedicine for Engineers</span>
-        <span class="course-category">Bioengineering</span>
-      </div>
-      <div class="course">
-        <span>CompSci 61A: The Structure and Interpretation of Computer Programs</span>
-        <span class="course-category">Computer Science</span>
-      </div>
-      <div class="course">
-        <span>Math 53: Multivariable Calculus</span>
-        <span class="course-category">Mathematics</span>
-      </div>
-      <div class="course">
-        <span>CHINESE 110A: Introduction to Literary Chinese</span>
-        <span class="course-category">Breadth Course</span>
-      </div>
-      <div class="course">
-        <span>BIOENG 26: Introduction to Bioengineering</span>
-        <span class="course-category">Bioengineering</span>
-      </div>
-    </div>
-    
-  <footer><span>© 2026 Lisa Liu</span><span><a href="../index.html">← Back to Home</a></span></footer>
-</section>
-</main>
+        <footer>
+          <span>© 2026 Lisa Liu</span>
+          <span><a href="../index.html">← Back to Home</a></span>
+        </footer>
+      </section>
+    </main>
+  </div>
 
-<script>
+  <script>
+    const root = document.documentElement;
+    const toggleBtn = document.getElementById('theme-toggle');
+    const toggleText = document.getElementById('toggle-text');
+    const toggleIcon = document.getElementById('toggle-icon');
+
     if (localStorage.getItem('theme') === 'light') {
-    document.documentElement.setAttribute('data-theme', 'light');
-  }
-  const toggleBtn = document.getElementById('theme-toggle');
-  const toggleText = document.getElementById('toggle-text');
-  const toggleIcon = document.getElementById('toggle-icon');
+      root.setAttribute('data-theme', 'light');
+    }
 
-  function updateToggleUI() {
-    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-    toggleText.textContent = isLight ? 'Dark Mode' : 'Light Mode';
-    toggleIcon.textContent = isLight ? '🌙' : '☀️';
-  }
-  updateToggleUI();
+    function updateToggleUI() {
+      const isLight = root.getAttribute('data-theme') === 'light';
+      toggleText.textContent = isLight ? 'Dark Mode' : 'Light Mode';
+      toggleIcon.textContent = isLight ? '🌙' : '☀️';
+    }
 
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', function() {
-      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    updateToggleUI();
+
+    toggleBtn.addEventListener('click', function () {
+      const isLight = root.getAttribute('data-theme') === 'light';
+
       if (isLight) {
-        document.documentElement.removeAttribute('data-theme');
+        root.removeAttribute('data-theme');
         localStorage.setItem('theme', 'dark');
       } else {
-        document.documentElement.setAttribute('data-theme', 'light');
+        root.setAttribute('data-theme', 'light');
         localStorage.setItem('theme', 'light');
       }
+
       updateToggleUI();
     });
-  }
-</script>
+  </script>
+</body>
+</html>
